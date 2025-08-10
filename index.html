@@ -1,79 +1,255 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anup Kumar - Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anup Kumar — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Anup Kumar - Web Developer. Modern animated portfolio." />
 </head>
 <body>
-  <div class="container">
-    <!-- Left Section -->
-    <div class="left-section">
-      <div class="profile-header">
-        <img src="anup.jpg" alt="Anup Kumar" class="profile-img" />
-        <h1>Anup Kumar</h1>
-      </div>
-      <div class="profile-info">
-        <p><strong>Email:</strong> <a href="mailto:kumaranup2k2@gmail.com">kumaranup2k2@gmail.com</a></p>
-        <p><strong>Phone:</strong> +91 6201085166</p>
-        <p><strong>Location:</strong> Kolkata, India</p>
-      </div>
-      <section id="about">
-        <h2>About Me</h2>
-        <p>
-          Motivated and detail-oriented Computer Science student with hands-on
-          experience in FastAPI, Python, and database management. Seeking
-          opportunities to apply technical skills in real-world projects.
-        </p>
-      </section>
-    </div>
-
-    <!-- Right Section -->
-    <div class="right-section">
-      <section>
-        <h2>Education</h2>
-        <p><strong>B.Tech in Computer Science</strong><br />
-        Bengal Institute Of Technology(tig), West Bengal<br />
-        2023 - 2026 (Expected)</p>
-
-        <p><strong>Diploma in Computer Science</strong><br />
-        Raghunathpur Government Polytechnic College<br />
-        2020 - 2023</p>
-      </section>
-
-      <section>
-        <h2>Skills</h2>
-        <ul>
-          <li>Python</li>
-          <li>FastAPI</li>
-          <li>SQL Server</li>
-          <li>Frontend(HTML 5, CSS, Js)</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Projects</h2>
-        <ul>
-          <li>
-            <strong><a href="https://github.com/kumaranup2k2/Anup_Mobile_Store" class="project-link">Mobile Store Management System</a></strong> –
-            A FastAPI-based project with SQL Server for managing products.
-          </li>
-          <li>
-            <strong><a href="#" class="project-link">Bus Booking System</a></strong> –
-            Built a basic bus ticket booking API using FastAPI (no login required).
-          </li>
-          <li>
-            <strong><a href="https://github.com/kumaranup2k2/Number_Ninja" class="project-link">Number Ninja(Scientific Calculator)</a></strong> –
-            A Python-based GUI calculator with scientific functions.
-          </li>
-          <li>
-            <strong><a href="https://github.com/kumaranup2k2/Book_Cricket" class="project-link">Book Cricket</a></strong> –
-            A Python file handling project simulating a book cricket game.
-          </li>
-        </ul>
-      </section>
-    </div>
+  <div class="bg-layer">
+    <canvas id="bg-canvas"></canvas>
+    <div class="gradient-overlay"></div>
   </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      
+      <nav class="nav" id="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-btn" href="resume.pdf" download>Resume</a>
+        <button id="nav-toggle" aria-label="toggle navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="profile-wrap reveal">
+            <img src="profile_pic.jpg" alt="Anup Kumar" class="profile-pic" />
+            <div class="ring"></div>
+          </div>
+
+          <h1 class="name">Hey, I'm <span class="accent">Anup</span></h1>
+          <p class="tagline"><span id="typing"></span></p>
+
+          <div class="cta-row">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn ghost" href="#contact">Contact</a>
+          </div>
+
+          <div class="social-row">
+            <a href="https://github.com/kumaranup2k2" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:kumaranup2k2@gmail.com">Email</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="intro-card reveal">
+            <h3>Objective</h3>
+            <p>Building responsive, accessible web apps with delightful UI & smooth animations. Seeking internships and freelance work.</p>
+
+            <div class="skill-pills">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Python</span>
+              <span>FastAPI</span>
+            </div>
+          </div>
+
+          <div class="quick-stats reveal">
+            <div>
+              <strong>5</strong>
+              <small>Projects</small>
+            </div>
+            <div>
+              <strong>+1</strong>
+              <small>Internship</small>
+            </div>
+            <div>
+              <strong>100%</strong>
+              <small>Passion</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about container" id="about">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>I design and build polished web apps — frontend-first with pragmatic backend skills in Python and FastAPI. I enjoy clean UI, micro-interactions and writing readable code.</p>
+          <p>I'm currently studying B.Tech and working on projects related to web apps and local AI assistant tools.</p>
+        </div>
+
+        <div class="quick-facts reveal">
+          <h4>Quick Facts</h4>
+          <ul>
+            <li>Internship: CMERI (Python on Robotics)</li>
+            <li>Databases: SQL Server</li>
+            <li>Tools: VS Code, Git, Postman</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills container" id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-head"><span class="skill-emoji">💻</span><h4>Frontend</h4></div>
+          <p>HTML · CSS · JavaScript</p>
+          <div class="progress" data-value="90"><span></span></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-head"><span class="skill-emoji">⚙️</span><h4>Backend</h4></div>
+          <p>Python (FastAPI)</p>
+          <div class="progress" data-value="75"><span></span></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-head"><span class="skill-emoji">🗄️</span><h4>Databases</h4></div>
+          <p>SQL Server</p>
+          <div class="progress" data-value="70"><span></span></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-head"><span class="skill-emoji">🛠️</span><h4>Tools</h4></div>
+          <p>Git · Postman · VS Code</p>
+          <div class="progress" data-value="85"><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects container" id="projects">
+      <h2 class="section-title">Projects</h2>
+
+      <!-- Tabs -->
+      <div class="project-tabs">
+        <button class="tab-btn active" data-category="all">All</button>
+        <button class="tab-btn" data-category="web">Web Development</button>
+        <button class="tab-btn" data-category="python">Python</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Web Development -->
+        <article class="project-card reveal" data-category="web">
+          <div class="project-meta">
+            <h3>Store Management</h3>
+            <p>Frontend only mobile store management — Add / Delete / Update / View.</p>
+            <div class="proj-actions">
+              <a class="btn small" href="#" target="_blank">Live Demo</a>
+              <a class="btn ghost small" href="https://github.com/kumaranup2k2/Store_Management" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="web">
+          <div class="project-meta">
+            <h3>Holy Cross</h3>
+            <p>School website project with responsive design. Work in progress</p>
+            <div class="proj-actions">
+              <a class="btn small" href="#" target="_blank">Live Demo</a>
+              <a class="btn ghost small" href="https://github.com/kumaranup2k2/Holy-Cross" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Python -->
+        <article class="project-card reveal" data-category="python">
+          <div class="project-meta">
+            <h3>Book Cricket</h3>
+            <p>Python-based book cricket game.</p>
+            <div class="proj-actions">
+              <a class="btn small" href="#" target="_blank">Live Demo</a>
+              <a class="btn ghost small" href="https://github.com/kumaranup2k2/Book_Cricket" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="python">
+          <div class="project-meta">
+            <h3>Number Ninja</h3>
+            <p>Scientific calculator built in Python.</p>
+            <div class="proj-actions">
+              <a class="btn small" href="#" target="_blank">Live Demo</a>
+              <a class="btn ghost small" href="https://github.com/kumaranup2k2/Number_Ninja" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="python">
+          <div class="project-meta">
+            <h3>Anup Mobile Store</h3>
+            <p>Python API + SQL for mobile store management.</p>
+            <div class="proj-actions">
+              <a class="btn small" href="#" target="_blank">Live Demo</a>
+              <a class="btn ghost small" href="https://github.com/kumaranup2k2/Anup_Mobile_Store" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+<!-- education -->
+    <section class="education container" id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-grid reveal">
+        <div class="edu-card">
+          <h4>B.Tech — Bengal Institute Of Technology</h4>
+          <p>Expected 2026</p>
+        </div>
+        <div class="edu-card">
+          <h4>Diploma — Raghunathpur Govt. Polytechnic</h4>
+          <p>2023 — CGPA: 7.6</p>
+        </div>
+        <div class="edu-card">
+          <h4>School — Kendriya Vidyalaya Chandrapura</h4>
+          <p>2023 — CGPA: 7.4</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact container" id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid reveal">
+        <div class="contact-left">
+          <p>Email: <a href="mailto:kumaranup2k2@gmail.com">kumaranup2k2@gmail.com</a></p>
+          <p>Phone: +91 6201085166</p>
+          <div class="social-icons">
+            <a href="https://github.com/kumaranup2k2" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="return false;">
+          <input placeholder="Your name" required />
+          <input placeholder="Email" required />
+          <textarea placeholder="Message" rows="4" required></textarea>
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Anup Kumar | Portfolio — Designed & Developed by Anup Kumar</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
