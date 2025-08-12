@@ -198,26 +198,14 @@ html, body {
 
 /* About */
 .section-title {
-  font-size: 22px;          /* Slightly bigger for better emphasis */
-  margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 16px;
   color: var(--accent);
-  font-weight: 600;         /* Make title a bit bolder */
-  letter-spacing: 0.03em;   /* Subtle letter spacing for readability */
 }
-
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 24px;                /* Slightly more gap for better breathing space */
-  align-items: start;       /* Align items to the top */
-}
-
-/* Make it responsive for smaller screens */
-@media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;  /* Single column on tablets and smaller */
-    gap: 16px;
-  }
+  /* grid-template-columns: 1fr 300px;
+  gap: 20px; */
 }
 
 /* Skills */
